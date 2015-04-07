@@ -1,0 +1,2 @@
+$("#votes-count").text(<%= @article.get_likes.size %>);
+

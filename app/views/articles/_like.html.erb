@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <% if current_user.liked? @article %>
+      <%= link_to "unlike", unlike_article_path(@article), class:'vote', method: :patch, remote: true %>
+  <% else %>
+      <%= link_to "like", like_article_path(@article), class: 'vote', method: :patch, remote: true %>
+  <% end %>
+   <% end %>
