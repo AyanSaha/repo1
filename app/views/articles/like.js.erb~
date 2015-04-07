@@ -1,2 +1,0 @@
-$("#votes-count").text(<%= @article.get_likes.size %>);
-$("#like").html("<%=j (render :partial => 'articles/like') %>");

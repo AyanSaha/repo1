@@ -7,7 +7,7 @@ gem 'rails', '4.2.0'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '3.3.4.1'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'cancancan' ,'~>1.10'
@@ -17,7 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+ gem 'therubyracer', platforms: :ruby
 gem 'slim'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
