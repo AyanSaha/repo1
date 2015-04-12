@@ -8355,3 +8355,1412 @@ Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-07 15:16:03 +0530
             FROM sqlite_temp_master
             WHERE name='index_votes_on_votable_id_and_votable_type_and_vote_scope' AND type='index'
 [0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-13 01:23:30 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (11.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 16764ms (Views: 16718.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-13 01:23:47 +0530
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 383ms (Views: 382.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-3e6a3277a7019eb06106cdfc6c017081.css?body=1" for 127.0.0.1 at 2015-04-13 01:23:48 +0530
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:23:48 +0530
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:23:53 +0530
+Processing by ArticlesController#index as HTML
+Completed 401 Unauthorized in 6ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-04-13 01:23:54 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (11.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (49.8ms)
+Completed 200 OK in 300ms (Views: 238.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-04-13 01:24:05 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"btLCILPWGpjM1EAFKV1ydtBLoKDZ8u1K/6S52fMXsj8RAFtIQ/MRxxWGDhH6CKlns1IO+Ee3ZgSwrRVclFe7bg==", "user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "abc@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-04-07 09:45:55.815860"], ["current_sign_in_at", "2015-04-12 19:54:05.927566"], ["sign_in_count", 5], ["updated_at", "2015-04-12 19:54:05.930249"], ["id", 2]]
+  [1m[36m (12.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 185ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:24:06 +0530
+Processing by ArticlesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.6ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:54:06.016935"], ["updated_at", "2015-04-12 19:54:06.018094"], ["id", 2]]
+  [1m[36m (17.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 262ms (Views: 205.7ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:24:06 +0530
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2015-04-13 01:24:11 +0530
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:54:11.961810"], ["updated_at", "2015-04-12 19:54:11.963501"], ["id", 2]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  Rendered articles/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 163ms (Views: 134.5ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2015-04-13 01:24:17 +0530
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WtR1V8MPhlf2MR7zxhcvB2B45BmBtOGHUMRx1E90ZgZdaqkIxIdAI/eG9GgXyFNmPNdeeQI+YCTymjoW8HK3yw==", "article"=>{"title"=>"aksljdklj", "text"=>"sadas"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:54:17.706365"], ["updated_at", "2015-04-12 19:54:17.728073"], ["id", 2]]
+  [1m[35m (10.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "articles" ("title", "text", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "aksljdklj"], ["text", "sadas"], ["user_id", 2], ["created_at", "2015-04-12 19:54:17.748879"], ["updated_at", "2015-04-12 19:54:17.748879"]]
+  [1m[36m (13.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:9292/articles/1
+Completed 302 Found in 61ms (ActiveRecord: 24.6ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2015-04-13 01:24:17 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:54:17.843532"], ["updated_at", "2015-04-12 19:54:17.851198"], ["id", 2]]
+  [1m[36m (22.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (21.8ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = ? AND "votes"."voter_type" = ? AND "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = 't'[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Article"]]
+  Rendered articles/_like.html.erb (7.6ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 1], ["votable_type", "Article"]]
+  Rendered articles/show.html.erb within layouts/application (135.2ms)
+Completed 200 OK in 403ms (Views: 343.8ms | ActiveRecord: 24.2ms)
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:24:18 +0530
+
+
+Started PATCH "/articles/1/like" for 127.0.0.1 at 2015-04-13 01:24:22 +0530
+Processing by ArticlesController#like as JS
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:54:22.453550"], ["updated_at", "2015-04-12 19:54:22.455383"], ["id", 2]]
+  [1m[35m (6.2ms)[0m  commit transaction
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."voter_id" = ? AND "votes"."voter_type" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["voter_id", 2], ["voter_type", "User"]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "votes" ("votable_id", "votable_type", "voter_id", "voter_type", "vote_flag", "vote_weight", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["votable_id", 1], ["votable_type", "Article"], ["voter_id", 2], ["voter_type", "User"], ["vote_flag", "t"], ["vote_weight", 1], ["created_at", "2015-04-12 19:54:22.520472"], ["updated_at", "2015-04-12 19:54:22.520472"]]
+  [1m[35m (10.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = ? AND "votes"."voter_type" = ? AND "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = 't'  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Article"]]
+  Rendered articles/_like.html.erb (4.7ms)
+  Rendered articles/like.js.erb (15.4ms)
+Completed 200 OK in 158ms (Views: 70.4ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:24:30 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:54:30.980806"], ["updated_at", "2015-04-12 19:54:30.982107"], ["id", 2]]
+  [1m[35m (25.6ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 191ms (Views: 154.1ms | ActiveRecord: 26.3ms)
+
+
+Started DELETE "/articles/1" for 127.0.0.1 at 2015-04-13 01:24:37 +0530
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"k1DjTTIMzsGpOEfSwy4UbQM1O9B3NvaH/89S5gukwXKU7j8SNYQItaiPrUkS8WgMX5qBsPS8dyRdkRkktKIQvw==", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:54:37.800819"], ["updated_at", "2015-04-12 19:54:37.801987"], ["id", 2]]
+  [1m[36m (13.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 53ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:24:37 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:54:37.868800"], ["updated_at", "2015-04-12 19:54:37.877820"], ["id", 2]]
+  [1m[35m (17.1ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 268ms (Views: 221.0ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:24:38 +0530
+
+
+Started DELETE "/articles/1" for 127.0.0.1 at 2015-04-13 01:24:45 +0530
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2FMxp+ln+e6MPeOBVsgjvgK46EDa+zDBYFAdCTNbNkLf7e347u8/mo2KCRqHF1/fXhdSIFlxsWLCDlbLjF3njw==", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:54:45.134198"], ["updated_at", "2015-04-12 19:54:45.135309"], ["id", 2]]
+  [1m[36m (17.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 52ms (ActiveRecord: 17.9ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:24:45 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (6.5ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:54:45.238113"], ["updated_at", "2015-04-12 19:54:45.247375"], ["id", 2]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 346ms (Views: 289.2ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:24:45 +0530
+
+
+Started DELETE "/articles/1" for 127.0.0.1 at 2015-04-13 01:24:56 +0530
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QHNxKWhe/YWMV9pSAlPHKbkGRkf4walGeLI5FGF+cgpHza12b9Y78Y3gMMnTjLtI5an8J3tLKOXa7HLW3nijxw==", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:54:56.390521"], ["updated_at", "2015-04-12 19:54:56.391547"], ["id", 2]]
+  [1m[36m (21.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.5ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 75ms (ActiveRecord: 22.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:24:56 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (13.7ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:54:56.487939"], ["updated_at", "2015-04-12 19:54:56.494803"], ["id", 2]]
+  [1m[35m (18.1ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 252ms (Views: 196.1ms | ActiveRecord: 32.3ms)
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:24:56 +0530
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:09 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:09.433679"], ["updated_at", "2015-04-12 19:55:09.434711"], ["id", 2]]
+  [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 16ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:09 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:09.466439"], ["updated_at", "2015-04-12 19:55:09.469463"], ["id", 2]]
+  [1m[35m (14.7ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 194ms (Views: 159.4ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:12 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:12.542431"], ["updated_at", "2015-04-12 19:55:12.543494"], ["id", 2]]
+  [1m[36m (7.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 18ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:12 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:12.582061"], ["updated_at", "2015-04-12 19:55:12.583077"], ["id", 2]]
+  [1m[35m (14.3ms)[0m  commit transaction
+  [1m[36mArticle Load (1.3ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 191ms (Views: 166.0ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:15 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:15.470194"], ["updated_at", "2015-04-12 19:55:15.471306"], ["id", 2]]
+  [1m[36m (42.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 53ms (ActiveRecord: 42.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:15 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:15.545362"], ["updated_at", "2015-04-12 19:55:15.546543"], ["id", 2]]
+  [1m[35m (20.7ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 193ms (Views: 156.8ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2015-04-13 01:25:18 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:18.946732"], ["updated_at", "2015-04-12 19:55:18.948290"], ["id", 2]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (4.3ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = ? AND "votes"."voter_type" = ? AND "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = 't'[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Article"]]
+  Rendered articles/_like.html.erb (3.8ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 1], ["votable_type", "Article"]]
+  Rendered articles/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 198ms (Views: 175.3ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:24 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:24.787085"], ["updated_at", "2015-04-12 19:55:24.788635"], ["id", 2]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 21ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:24 +0530
+Processing by ArticlesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:24.832221"], ["updated_at", "2015-04-12 19:55:24.833839"], ["id", 2]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 233ms (Views: 193.9ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:28 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:28.325828"], ["updated_at", "2015-04-12 19:55:28.328032"], ["id", 2]]
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 22ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:28 +0530
+Processing by ArticlesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:28.371566"], ["updated_at", "2015-04-12 19:55:28.373097"], ["id", 2]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 213ms (Views: 181.6ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:29 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:29.601530"], ["updated_at", "2015-04-12 19:55:29.602574"], ["id", 2]]
+  [1m[35m (12.2ms)[0m  commit transaction
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 30ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:29 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:29.638924"], ["updated_at", "2015-04-12 19:55:29.639977"], ["id", 2]]
+  [1m[36m (15.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 26ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:29 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:29.696325"], ["updated_at", "2015-04-12 19:55:29.699958"], ["id", 2]]
+  [1m[35m (6.4ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 207ms (Views: 181.9ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:30 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:30.081288"], ["updated_at", "2015-04-12 19:55:30.083614"], ["id", 2]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 21ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:30 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:30.119281"], ["updated_at", "2015-04-12 19:55:30.120484"], ["id", 2]]
+  [1m[35m (14.1ms)[0m  commit transaction
+  [1m[36mArticle Load (3.0ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 192ms (Views: 158.4ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:31 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:31.607480"], ["updated_at", "2015-04-12 19:55:31.610061"], ["id", 2]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 20ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:31 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:31.648612"], ["updated_at", "2015-04-12 19:55:31.649626"], ["id", 2]]
+  [1m[35m (27.6ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 215ms (Views: 172.5ms | ActiveRecord: 28.2ms)
+
+
+Started DELETE "/articles/1" for 127.0.0.1 at 2015-04-13 01:25:35 +0530
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6HAljgv2gF78biJuhHO2xem5gldryekbK9ziSNd2d5nvzvnRDH5GKv3ZyPVVrMqktRY4N+hDaLiJgqmKaHCmVA==", "id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:35.375442"], ["updated_at", "2015-04-12 19:55:35.383997"], ["id", 2]]
+  [1m[36m (14.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 79ms (ActiveRecord: 15.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:35 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:35.523958"], ["updated_at", "2015-04-12 19:55:35.525081"], ["id", 2]]
+  [1m[35m (12.0ms)[0m  commit transaction
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 269ms (Views: 247.5ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:25:36 +0530
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:38 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:38.540807"], ["updated_at", "2015-04-12 19:55:38.541943"], ["id", 2]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 19ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:38 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:38.581952"], ["updated_at", "2015-04-12 19:55:38.583094"], ["id", 2]]
+  [1m[35m (20.4ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 203ms (Views: 165.4ms | ActiveRecord: 21.0ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:40 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:40.929214"], ["updated_at", "2015-04-12 19:55:40.930435"], ["id", 2]]
+  [1m[36m (7.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 17ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:40 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:40.965893"], ["updated_at", "2015-04-12 19:55:40.967999"], ["id", 2]]
+  [1m[35m (18.3ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 195ms (Views: 151.5ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:42 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:42.440477"], ["updated_at", "2015-04-12 19:55:42.441537"], ["id", 2]]
+  [1m[36m (7.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 18ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:42 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:42.474714"], ["updated_at", "2015-04-12 19:55:42.477762"], ["id", 2]]
+  [1m[35m (14.5ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 192ms (Views: 163.6ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2015-04-13 01:25:45 +0530
+Processing by ArticlesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:45.977955"], ["updated_at", "2015-04-12 19:55:45.979189"], ["id", 2]]
+  [1m[36m (7.1ms)[0m  [1mcommit transaction[0m
+  Rendered articles/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 171ms (Views: 154.0ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:48 +0530
+Processing by ArticlesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:48.013621"], ["updated_at", "2015-04-12 19:55:48.015669"], ["id", 2]]
+  [1m[36m (6.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 180ms (Views: 161.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:50 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:50.822645"], ["updated_at", "2015-04-12 19:55:50.823610"], ["id", 2]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 17ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:50 +0530
+Processing by ArticlesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:50.860403"], ["updated_at", "2015-04-12 19:55:50.861386"], ["id", 2]]
+  [1m[36m (16.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 185ms (Views: 153.5ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2015-04-13 01:25:52 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:52.652086"], ["updated_at", "2015-04-12 19:55:52.655362"], ["id", 2]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (5.0ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = ? AND "votes"."voter_type" = ? AND "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = 't'  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Article"]]
+  Rendered articles/_like.html.erb (2.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"]]
+  Rendered articles/show.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 203ms (Views: 171.4ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:25:55 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 19:55:55.465964"], ["updated_at", "2015-04-12 19:55:55.467593"], ["id", 2]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 22ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:25:55 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 19:55:55.528696"], ["updated_at", "2015-04-12 19:55:55.529878"], ["id", 2]]
+  [1m[35m (27.0ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 189ms (Views: 147.6ms | ActiveRecord: 27.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:49:58 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 401 Unauthorized in 55ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-04-13 01:49:58 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.html.erb (16.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (60.7ms)
+Completed 200 OK in 422ms (Views: 411.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-3e6a3277a7019eb06106cdfc6c017081.css?body=1" for 127.0.0.1 at 2015-04-13 01:49:59 +0530
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-04-13 01:49:59 +0530
+
+
+Started GET "/assets/bootstrap/alert-2a2796d28d7833f423ee421a3ad297bb.js?body=1" for 127.0.0.1 at 2015-04-13 01:49:59 +0530
+
+
+Started GET "/assets/bootstrap/affix-86647d01ace516e05ddf78d2b6e85e20.js?body=1" for 127.0.0.1 at 2015-04-13 01:49:59 +0530
+
+
+Started GET "/assets/bootstrap/button-6b326d9b5034209f30109e77c264a190.js?body=1" for 127.0.0.1 at 2015-04-13 01:49:59 +0530
+
+
+Started GET "/assets/bootstrap/carousel-31dbb9c732fc2da02b8d5a97d9ae0047.js?body=1" for 127.0.0.1 at 2015-04-13 01:49:59 +0530
+
+
+Started GET "/assets/bootstrap/collapse-624b0c6035c65b5be6ae581d8dc4e196.js?body=1" for 127.0.0.1 at 2015-04-13 01:49:59 +0530
+
+
+Started GET "/assets/bootstrap/dropdown-ce1bbc536745c41510513f7274f9897c.js?body=1" for 127.0.0.1 at 2015-04-13 01:49:59 +0530
+
+
+Started GET "/assets/bootstrap/modal-77a0e72df31a788e4f6a3f28370eb69e.js?body=1" for 127.0.0.1 at 2015-04-13 01:49:59 +0530
+
+
+Started GET "/assets/bootstrap/scrollspy-3892c697f57b7e7b9d5993044235a210.js?body=1" for 127.0.0.1 at 2015-04-13 01:49:59 +0530
+
+
+Started GET "/assets/bootstrap/tab-6f45b70c6440bd0222c171dd7a926b5d.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started GET "/assets/bootstrap/transition-264673896da1e31c3b865db964cd6592.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started GET "/assets/bootstrap/tooltip-718496fb53635605964fb77613425c8d.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started GET "/assets/bootstrap/popover-3dcfaa462d273d183ef52064ce120a5b.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started GET "/assets/bootstrap-sprockets-830839b3b00123a30d090955aa74da5c.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started GET "/assets/articles-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started GET "/assets/application-2a68b24fe831811bdd1cdfd5e203a82f.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for 127.0.0.1 at 2015-04-13 01:50:00 +0530
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-04-13 01:50:11 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FJPKsnYqPspBxW58gfJjmdcBfNDeQTj+DSXMmrmTy30TLRbtcaL4vkByhOdQLR/4i67GsF3LuV2ve4dYBpUasA==", "user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "abc@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-04-12 19:54:05.927566"], ["current_sign_in_at", "2015-04-12 20:20:11.879032"], ["sign_in_count", 6], ["updated_at", "2015-04-12 20:20:11.881262"], ["id", 2]]
+  [1m[35m (8.7ms)[0m  commit transaction
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 133ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:50:11 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.5ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:20:11.928907"], ["updated_at", "2015-04-12 20:20:11.929993"], ["id", 2]]
+  [1m[35m (14.6ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 285ms (Views: 219.5ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/assets/application-3e6a3277a7019eb06106cdfc6c017081.css?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap/button-6b326d9b5034209f30109e77c264a190.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap/carousel-31dbb9c732fc2da02b8d5a97d9ae0047.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap/affix-86647d01ace516e05ddf78d2b6e85e20.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap/alert-2a2796d28d7833f423ee421a3ad297bb.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap/collapse-624b0c6035c65b5be6ae581d8dc4e196.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap/dropdown-ce1bbc536745c41510513f7274f9897c.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap/modal-77a0e72df31a788e4f6a3f28370eb69e.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap/scrollspy-3892c697f57b7e7b9d5993044235a210.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap/tab-6f45b70c6440bd0222c171dd7a926b5d.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap/tooltip-718496fb53635605964fb77613425c8d.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap/transition-264673896da1e31c3b865db964cd6592.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap/popover-3dcfaa462d273d183ef52064ce120a5b.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/bootstrap-sprockets-830839b3b00123a30d090955aa74da5c.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/articles-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/application-2a68b24fe831811bdd1cdfd5e203a82f.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:12 +0530
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:50:13 +0530
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for 127.0.0.1 at 2015-04-13 01:50:13 +0530
+
+
+Started DELETE "/articles/1" for 127.0.0.1 at 2015-04-13 01:50:19 +0530
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2nmxLk1iPCymh28QNzFuhpQob2pw1w/ymeV5C+6ZNWAoJ3HQMutG5rfLLZ/zGywCf4z2QLatLYd9SwDJemdrrw==", "id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (6.9ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:20:19.086025"], ["updated_at", "2015-04-12 20:20:19.107473"], ["id", 2]]
+  [1m[36m (16.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (9.6ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 99ms (ActiveRecord: 33.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:50:19 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:20:19.243925"], ["updated_at", "2015-04-12 20:20:19.245327"], ["id", 2]]
+  [1m[35m (12.2ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 234ms (Views: 197.0ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/assets/application-3e6a3277a7019eb06106cdfc6c017081.css?body=1" for 127.0.0.1 at 2015-04-13 01:50:19 +0530
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:19 +0530
+
+
+Started GET "/assets/bootstrap/alert-2a2796d28d7833f423ee421a3ad297bb.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:19 +0530
+
+
+Started GET "/assets/bootstrap/carousel-31dbb9c732fc2da02b8d5a97d9ae0047.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:19 +0530
+
+
+Started GET "/assets/bootstrap/button-6b326d9b5034209f30109e77c264a190.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:19 +0530
+
+
+Started GET "/assets/bootstrap/affix-86647d01ace516e05ddf78d2b6e85e20.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:19 +0530
+
+
+Started GET "/assets/bootstrap/collapse-624b0c6035c65b5be6ae581d8dc4e196.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:19 +0530
+
+
+Started GET "/assets/bootstrap/dropdown-ce1bbc536745c41510513f7274f9897c.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:19 +0530
+
+
+Started GET "/assets/bootstrap/modal-77a0e72df31a788e4f6a3f28370eb69e.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:19 +0530
+
+
+Started GET "/assets/bootstrap/tab-6f45b70c6440bd0222c171dd7a926b5d.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:19 +0530
+
+
+Started GET "/assets/bootstrap/scrollspy-3892c697f57b7e7b9d5993044235a210.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/assets/bootstrap/transition-264673896da1e31c3b865db964cd6592.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/assets/bootstrap/tooltip-718496fb53635605964fb77613425c8d.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/assets/bootstrap/popover-3dcfaa462d273d183ef52064ce120a5b.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/assets/bootstrap-sprockets-830839b3b00123a30d090955aa74da5c.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/assets/articles-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/assets/application-2a68b24fe831811bdd1cdfd5e203a82f.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for 127.0.0.1 at 2015-04-13 01:50:20 +0530
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:50:24 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:20:24.501281"], ["updated_at", "2015-04-12 20:20:24.502431"], ["id", 2]]
+  [1m[36m (7.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 19ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:50:24 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:20:24.539796"], ["updated_at", "2015-04-12 20:20:24.541142"], ["id", 2]]
+  [1m[35m (14.0ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 198ms (Views: 165.2ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:50:27 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:20:27.505495"], ["updated_at", "2015-04-12 20:20:27.507291"], ["id", 2]]
+  [1m[36m (5.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 21ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:50:27 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:20:27.546450"], ["updated_at", "2015-04-12 20:20:27.548038"], ["id", 2]]
+  [1m[35m (19.0ms)[0m  commit transaction
+  [1m[36mArticle Load (1.0ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 202ms (Views: 169.0ms | ActiveRecord: 20.5ms)
+
+
+Started DELETE "/articles/1" for 127.0.0.1 at 2015-04-13 01:50:30 +0530
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"t7RAwctEKTnn0ogx/4y26sBIln4Ux/1QPtTe+tB/inNF6oA/tM1T8/aeyr47pvRuK+wPVNK93yXaeqc4RIHUvA==", "id"=>"1"}
+  [1m[35mUser Load (3.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (9.4ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:20:31.033619"], ["updated_at", "2015-04-12 20:20:31.034804"], ["id", 2]]
+  [1m[36m (21.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 65ms (ActiveRecord: 35.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:20:31.154305"], ["updated_at", "2015-04-12 20:20:31.161765"], ["id", 2]]
+  [1m[35m (7.8ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 237ms (Views: 200.9ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/assets/application-3e6a3277a7019eb06106cdfc6c017081.css?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/bootstrap/affix-86647d01ace516e05ddf78d2b6e85e20.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/bootstrap/alert-2a2796d28d7833f423ee421a3ad297bb.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/bootstrap/button-6b326d9b5034209f30109e77c264a190.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/bootstrap/carousel-31dbb9c732fc2da02b8d5a97d9ae0047.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/bootstrap/collapse-624b0c6035c65b5be6ae581d8dc4e196.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/bootstrap/dropdown-ce1bbc536745c41510513f7274f9897c.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/bootstrap/modal-77a0e72df31a788e4f6a3f28370eb69e.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/bootstrap/scrollspy-3892c697f57b7e7b9d5993044235a210.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/bootstrap/transition-264673896da1e31c3b865db964cd6592.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/bootstrap/tab-6f45b70c6440bd0222c171dd7a926b5d.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/bootstrap/tooltip-718496fb53635605964fb77613425c8d.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:31 +0530
+
+
+Started GET "/assets/bootstrap/popover-3dcfaa462d273d183ef52064ce120a5b.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:32 +0530
+
+
+Started GET "/assets/bootstrap-sprockets-830839b3b00123a30d090955aa74da5c.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:32 +0530
+
+
+Started GET "/assets/articles-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:32 +0530
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:32 +0530
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:32 +0530
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:32 +0530
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:32 +0530
+
+
+Started GET "/assets/application-2a68b24fe831811bdd1cdfd5e203a82f.js?body=1" for 127.0.0.1 at 2015-04-13 01:50:32 +0530
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:50:32 +0530
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for 127.0.0.1 at 2015-04-13 01:50:32 +0530
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:50:49 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:20:49.560856"], ["updated_at", "2015-04-12 20:20:49.562320"], ["id", 2]]
+  [1m[36m (6.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 20ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:50:49 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (8.5ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:20:49.603856"], ["updated_at", "2015-04-12 20:20:49.605450"], ["id", 2]]
+  [1m[35m (30.5ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 199ms (Views: 146.5ms | ActiveRecord: 39.4ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:50:51 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:20:51.844799"], ["updated_at", "2015-04-12 20:20:51.846450"], ["id", 2]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 22ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:50:51 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:20:51.878964"], ["updated_at", "2015-04-12 20:20:51.881292"], ["id", 2]]
+  [1m[35m (15.9ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 201ms (Views: 168.7ms | ActiveRecord: 16.7ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:50:53 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:20:53.864549"], ["updated_at", "2015-04-12 20:20:53.866293"], ["id", 2]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 25ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:50:53 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:20:53.910292"], ["updated_at", "2015-04-12 20:20:53.911983"], ["id", 2]]
+  [1m[35m (13.9ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 199ms (Views: 169.0ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:50:55 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:20:55.712159"], ["updated_at", "2015-04-12 20:20:55.713407"], ["id", 2]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 18ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:50:55 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:20:55.749346"], ["updated_at", "2015-04-12 20:20:55.750864"], ["id", 2]]
+  [1m[35m (16.9ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 191ms (Views: 160.2ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2015-04-13 01:50:57 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:20:57.226981"], ["updated_at", "2015-04-12 20:20:57.228462"], ["id", 2]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (13.1ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = ? AND "votes"."voter_type" = ? AND "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = 't'[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Article"]]
+  Rendered articles/_like.html.erb (13.5ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 1], ["votable_type", "Article"]]
+  Rendered articles/show.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 211ms (Views: 190.8ms | ActiveRecord: 9.5ms)
+
+
+Started PATCH "/articles/1/unlike" for 127.0.0.1 at 2015-04-13 01:51:00 +0530
+Processing by ArticlesController#unlike as JS
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:21:00.119242"], ["updated_at", "2015-04-12 20:21:00.120648"], ["id", 2]]
+  [1m[35m (6.9ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."voter_id" = ? AND "votes"."voter_type" = ? AND "votes"."vote_scope" IS NULL[0m  [["votable_id", 1], ["votable_type", "Article"], ["voter_id", 2], ["voter_type", "User"]]
+  [1m[35mActsAsVotable::Vote Load (0.2ms)[0m  SELECT  "votes".* FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."voter_id" = ? AND "votes"."voter_type" = ? AND "votes"."vote_scope" IS NULL  ORDER BY "votes"."id" DESC LIMIT 1  [["votable_id", 1], ["votable_type", "Article"], ["voter_id", 2], ["voter_type", "User"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "votes" SET "vote_flag" = ?, "updated_at" = ? WHERE "votes"."id" = ?  [["vote_flag", "f"], ["updated_at", "2015-04-12 20:21:00.147939"], ["id", 1]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_flag" = 't' AND "votes"."vote_scope" IS NULL  [["votable_id", 1], ["votable_type", "Article"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = ? AND "votes"."voter_type" = ? AND "votes"."votable_id" = ? AND "votes"."votable_type" = ? AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = 't'[0m  [["voter_id", 2], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Article"]]
+  Rendered articles/_like.html.erb (2.4ms)
+  Rendered articles/like.js.erb (7.6ms)
+Completed 200 OK in 59ms (Views: 16.8ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:51:06 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:21:06.412605"], ["updated_at", "2015-04-12 20:21:06.413991"], ["id", 2]]
+  [1m[36m (12.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 26ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:51:06 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:21:06.454108"], ["updated_at", "2015-04-12 20:21:06.458523"], ["id", 2]]
+  [1m[35m (26.8ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 205ms (Views: 161.6ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:54:35 +0530
+
+SyntaxError (/home/ayansaha91/blog5/app/controllers/articles_controller.rb:46: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/articles_controller.rb:46: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.9ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.9ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (25.5ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (47.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:55:40 +0530
+
+SyntaxError (/home/ayansaha91/blog5/app/controllers/articles_controller.rb:66: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/articles_controller.rb:66: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.1ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (27.7ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/ayansaha91/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (51.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:56:21 +0530
+Processing by ArticlesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:26:21.519423"], ["updated_at", "2015-04-12 20:26:21.526808"], ["id", 2]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 298ms (Views: 230.2ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/assets/application-3e6a3277a7019eb06106cdfc6c017081.css?body=1" for 127.0.0.1 at 2015-04-13 01:56:21 +0530
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:21 +0530
+
+
+Started GET "/assets/bootstrap/affix-86647d01ace516e05ddf78d2b6e85e20.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:21 +0530
+
+
+Started GET "/assets/bootstrap/alert-2a2796d28d7833f423ee421a3ad297bb.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:21 +0530
+
+
+Started GET "/assets/bootstrap/button-6b326d9b5034209f30109e77c264a190.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:21 +0530
+
+
+Started GET "/assets/bootstrap/carousel-31dbb9c732fc2da02b8d5a97d9ae0047.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/bootstrap/collapse-624b0c6035c65b5be6ae581d8dc4e196.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/bootstrap/dropdown-ce1bbc536745c41510513f7274f9897c.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/bootstrap/scrollspy-3892c697f57b7e7b9d5993044235a210.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/bootstrap/modal-77a0e72df31a788e4f6a3f28370eb69e.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/bootstrap/tab-6f45b70c6440bd0222c171dd7a926b5d.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/bootstrap/transition-264673896da1e31c3b865db964cd6592.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/bootstrap/tooltip-718496fb53635605964fb77613425c8d.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/bootstrap/popover-3dcfaa462d273d183ef52064ce120a5b.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/bootstrap-sprockets-830839b3b00123a30d090955aa74da5c.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/articles-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/application-2a68b24fe831811bdd1cdfd5e203a82f.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for 127.0.0.1 at 2015-04-13 01:56:22 +0530
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2015-04-13 01:56:26 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:26:26.273458"], ["updated_at", "2015-04-12 20:26:26.274737"], ["id", 2]]
+  [1m[35m (6.3ms)[0m  commit transaction
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered articles/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 213ms (Views: 195.6ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:56:28 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_seen_at", "2015-04-12 20:26:28.530427"], ["updated_at", "2015-04-12 20:26:28.532657"], ["id", 2]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 186ms (Views: 165.1ms | ActiveRecord: 9.0ms)
+
+
+Started DELETE "/articles/1" for 127.0.0.1 at 2015-04-13 01:56:32 +0530
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qHNPZCVdKjBAajxotoGXRs2+m80GHhaJ/fg/sn0IWTFaLY+aWtRQ+lEmfudyq9XCJhoC58BkNPwZVkZw6fYH/g==", "id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:26:32.433866"], ["updated_at", "2015-04-12 20:26:32.435667"], ["id", 2]]
+  [1m[36m (26.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mActsAsVotable::Vote Load (0.2ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = ? AND "votes"."votable_type" = ?[0m  [["votable_id", 1], ["votable_type", "Article"]]
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = ?  [["id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 1]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:9292/articles
+Completed 302 Found in 93ms (ActiveRecord: 36.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-04-13 01:56:32 +0530
+Processing by ArticlesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_seen_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_seen_at", "2015-04-12 20:26:32.537408"], ["updated_at", "2015-04-12 20:26:32.541020"], ["id", 2]]
+  [1m[36m (29.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 255ms (Views: 202.4ms | ActiveRecord: 30.1ms)
+
+
+Started GET "/assets/application-3e6a3277a7019eb06106cdfc6c017081.css?body=1" for 127.0.0.1 at 2015-04-13 01:56:32 +0530
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:32 +0530
+
+
+Started GET "/assets/bootstrap/affix-86647d01ace516e05ddf78d2b6e85e20.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:32 +0530
+
+
+Started GET "/assets/bootstrap/alert-2a2796d28d7833f423ee421a3ad297bb.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:32 +0530
+
+
+Started GET "/assets/bootstrap/carousel-31dbb9c732fc2da02b8d5a97d9ae0047.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/bootstrap/button-6b326d9b5034209f30109e77c264a190.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/bootstrap/collapse-624b0c6035c65b5be6ae581d8dc4e196.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/bootstrap/dropdown-ce1bbc536745c41510513f7274f9897c.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/bootstrap/modal-77a0e72df31a788e4f6a3f28370eb69e.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/bootstrap/scrollspy-3892c697f57b7e7b9d5993044235a210.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/bootstrap/tab-6f45b70c6440bd0222c171dd7a926b5d.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/bootstrap/tooltip-718496fb53635605964fb77613425c8d.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/bootstrap/transition-264673896da1e31c3b865db964cd6592.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/bootstrap/popover-3dcfaa462d273d183ef52064ce120a5b.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/bootstrap-sprockets-830839b3b00123a30d090955aa74da5c.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/articles-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/application-2a68b24fe831811bdd1cdfd5e203a82f.js?body=1" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for 127.0.0.1 at 2015-04-13 01:56:33 +0530
