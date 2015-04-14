@@ -1,0 +1,12 @@
+class CommentMailer < ApplicationMailer
+ def comment_created(current_user,article_user,text)
+      @current_user=current_user
+      @article_user=article_user
+      @text=text
+     mail(to: article_user.email,
+      from: "services@ayan.blog.app",
+      subject: "Commented on your post",
+     
+     )
+    end
+end

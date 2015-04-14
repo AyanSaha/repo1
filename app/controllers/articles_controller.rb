@@ -21,7 +21,7 @@ def show
   def create
      @article = Article.new(article_params)
       if @article.save
-          ArticleMailer.article_created(current_user).deliver
+          ArticleMailer.article_created(current_user,@article.text).deliver
           puts @user
           redirect_to @article
        else

@@ -1,10 +1,11 @@
 class ArticleMailer < ApplicationMailer
-def article_created(current_user)
-  
-     mail(to: current_user.email,
+def article_created(current_user,text)
+   @current_user=current_user
+   @text=text
+     mail(to: user.email,
       from: "services@ayan.blog.app",
       subject: "Post created",
-      body:"Posted"
+     
      )
   end
 end

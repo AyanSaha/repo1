@@ -1,0 +1,4 @@
+<p>Hello <%= article_user.email %> </p>
+<p> <%= current_user.email %> has commented </p>
+<p> <%= body %> </p>
+ on your post
