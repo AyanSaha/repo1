@@ -28,7 +28,7 @@ ActionMailer::Base.smtp_settings = {
   :domain               => "mail.google.com",  
   :user_name            => "ayan.blog.app@gmail.com",  
   :password             => "New#Delhi1",  
-  :authentication       => "plain"
+  :authentication       => "login"
   #:enable_starttls_auto => true # I don't have this, but it should work anyway 
 } 
 

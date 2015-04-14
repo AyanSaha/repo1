@@ -42,22 +42,22 @@ RSpec.describe ArticlesController, type: :controller do
    login_user
    context 'Update article with valid attributes' do
     it 'Update article'do 
-        article = Article.create!(attributes_for(:article))
-        patch :update, id: article.to_param ,:article => attributes_for(:article, title: "Title Changed")
+        article = Article.create(attributes_for(:article))
+        put :update, id: article.to_param ,:article => attributes_for(:article, text: "Text Changed")
         article.reload
-        expect(Article.first.title).to eq("Title Changed")
-        #expect(article.title).to eq("Title Changed")
+       # expect(Article.first.title).to eq("Title Changed")
+        expect(article.text).to eq("Text Changed")
      end
      end
    end
    describe 'Delete article 'do
-        login_user
-      
+       
+      login_user
        it 'delete article ' do
            article=Article.create!(attributes_for(:article))
-           expect{
-          delete :destroy,:id => article.to_param       
-          }.to change(Article,:count).by(-1)
+           expect do
+          delete :destroy,{:id => article.to_param}       
+          end.to change(Article,:count).by(-1)
          end
        
        it "redirects to the posts list" do
